@@ -3,6 +3,7 @@ import { View, StyleSheet, Dimensions, TouchableOpacity, PermissionsAndroid, Pla
 import MapView, { PROVIDER_GOOGLE, Marker, Circle } from 'react-native-maps';
 import Ionicons from 'react-native-vector-icons/Ionicons'; // Import icon library
 import CustomMarker from './CustomerMarker';
+import Search from './Search';
 
 
 interface MarkerType {
@@ -191,6 +192,10 @@ const Location = () => {
   };
 
   return (
+    <View className='flex-1'>
+      <View>
+        <Search/>
+      </View>
     <View style={styles.container}>
        
        <TextInput
@@ -260,6 +265,7 @@ const Location = () => {
         </View>
       </Modal>
 
+    </View>
     </View>
   );
 };
