@@ -3,11 +3,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Animated, { useAnimatedStyle, withSpring } from 'react-native-reanimated';
 
-import Search from './Search';
-import Settings from './Settings';
-import Feed from './Feed';
-import Saves from './Saves';
-import Alerts from './Alerts';
+ 
+import Home from './Home';
+import Properties from './Properties';
+import Contact from './Contact';
+import About from './About';
 
 const BottomTabs = () => {
   const Tab = createBottomTabNavigator();
@@ -18,17 +18,15 @@ const BottomTabs = () => {
         tabBarIcon: ({ focused, color, size }) => {
           let iconName: any;
 
-          if (route.name === 'Search') {
-            iconName = focused ? 'search-location' : 'search';
-          } else if (route.name === 'Settings') {
-            iconName = focused ? 'cog' : 'cog';
-          } else if (route.name === 'Feed') {
+          if (route.name === 'Properties') {
+            iconName = focused ? 'building' : 'building';
+          } else if (route.name === 'Contact') {
+            iconName = focused ? 'phone-alt' : 'phone-alt';
+          } else if (route.name === 'Home') {
             iconName = focused ? 'home' : 'house-user';
-          } else if (route.name === 'Alerts') {
-            iconName = focused ? 'bell' : 'bell';
-          } else if (route.name === 'Saves') {
-            iconName = focused ? 'heart' : 'heart';
-          }
+          } else if (route.name === 'About') {
+            iconName = focused ? 'info-circle' : 'info-circle';
+          }  
 
           const animatedStyle = useAnimatedStyle(() => {
             return {
@@ -63,30 +61,26 @@ const BottomTabs = () => {
     >
       
       <Tab.Screen
-        name="Feed"
-        component={Feed}
+        name="Home"
+        component={Home}
         options={{ headerShown: false }}
       />
       <Tab.Screen
-        name="Search"
-        component={Search}
+        name="Properties"
+        component={Properties}
         options={{ headerShown: false }}
       />
       <Tab.Screen
-        name="Alerts"
-        component={Alerts}
+        name="About"
+        component={About}
         options={{ headerShown: false }}
       />
       <Tab.Screen
-        name="Saves"
-        component={Saves}
+        name="Contact"
+        component={Contact}
         options={{ headerShown: false }}
       />
-      <Tab.Screen
-        name="Settings"
-        component={Settings}
-        options={{ headerShown: false }}
-      />
+      
     </Tab.Navigator>
   );
 };
