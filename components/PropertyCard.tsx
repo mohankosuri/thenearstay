@@ -2,6 +2,7 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 const properties = [
   {
@@ -14,7 +15,8 @@ const properties = [
     beds: 3,
     baths: 2,
     area: 1050,
-    status: 'Lease'
+    status: 'Lease',
+    price:1500
   },
   {
     id: 2,
@@ -26,7 +28,8 @@ const properties = [
     beds: 4,
     baths: 3,
     area: 2000,
-    status: 'Lease'
+    status: 'Lease',
+    price:3500
   },
   {
     id: 3,
@@ -38,8 +41,49 @@ const properties = [
     beds: 2,
     baths: 2,
     area: 1200,
-    status: 'Rent'
+    status: 'Rent',
+    price:7500
+  },
+  {
+    "id": 4,
+    "title": "Honorable",
+    "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
+    "image": "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "image1": "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "location": "Ash Shajarah",
+    "beds": 6,
+    "baths": 10,
+    "area": 114,
+    "status": "Lease",
+    "price": 854.96
+  },
+  {
+    "id": 5,
+    "title": "Cambria Hotels",
+    "description": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+    "image": "https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "image1": "https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "location": "Kailahun",
+    "beds": 8,
+    "baths": 2,
+    "area": 1739,
+    "status": "Rent",
+    "price": 1049.88
+  },
+  {
+    "id": 6,
+    "title": "Royal Heritage",
+    "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
+    "image": "https://images.pexels.com/photos/261388/pexels-photo-261388.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "image1": "https://images.pexels.com/photos/261388/pexels-photo-261388.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "location": "Disūq",
+    "beds": 3,
+    "baths": 7,
+    "area": 278,
+    "status": "Rent",
+    "price": 1183.43
   }
+
 ];
 
 const propertyCard = () => {
@@ -47,14 +91,14 @@ const propertyCard = () => {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <View className='flex justify-center items-center mb-4'>
+      <View className='mb-4 ml-5'>
       <Text className='text-green-700 text-2xl font-bold'>Properties</Text>
       </View>
       <View style={styles.gridContainer}>
         {properties.map(property => (
           <View style={styles.propertyCard} key={property.id}>
             <TouchableOpacity
-              onPress={() => navigation.navigate('PropertyDetail', { property })}
+              onPress={() => navigation.navigate('PropertyDetail1', { property })}
             >
               <View style={styles.imageContainer}>
                 <Image
@@ -68,12 +112,13 @@ const propertyCard = () => {
               </View>
               <View style={styles.propertyDetails}>
                 <Text style={styles.propertyTitle}>{property.title}</Text>
-                <Text style={styles.propertyDescription}>{property.description}</Text>
+                
                 <View style={styles.locationContainer}>
                   <Text style={styles.locationText}>📍 {property.location}</Text>
                 </View>
                 <View style={styles.detailsContainer}>
                   <Text style={styles.detailText}>
+                   
                     <Text style={styles.boldText}>BEDS</Text>: <Text style={styles.highlightText}>{property.beds}</Text>
                   </Text>
                   <Text style={styles.detailText}>

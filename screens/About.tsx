@@ -1,53 +1,96 @@
-import { View, Text,Image,StyleSheet } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+ 
 
 const About = () => {
+  const navigation:any = useNavigation();
   return (
-    <View className='flex-1 items-center'>
-      <View >
-        <View>
-        <View style={styles.container}>
-      <Image
-        source={{ uri: 'https://cdn.rareblocks.xyz/collection/celebration/images/team/1/blob-shape.svg' }}
-        style={styles.blobImage}
+    <ScrollView contentContainerStyle={styles.container}>
+      <Image 
+        source={{ uri: 'https://images.pexels.com/photos/208321/pexels-photo-208321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' }} 
+        style={styles.logo} 
       />
-      <Image
-        source={{ uri: 'https://cdn.rareblocks.xyz/collection/celebration/images/team/1/business-woman.png' }}
-        style={styles.businessWomanImage}
-      />
-    </View>
-        </View>
-        <Text className='font-bold text-2xl mx-2'>Welcome to  <Text className='text-violet-600'>The NearStay</Text></Text>
-        <View className='mt-4 mx-2'>
-            <Text className='text-md'>
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
-            </Text>
-        </View>
-      </View>
-    </View>
-  )
-}
+      <Text style={styles.appName}>The Near Stay</Text>
+      
+      
+      <Text style={styles.sectionTitle}>Welcome</Text>
+      <Text style={styles.description}>
+        Welcome to The Near Stay – your perfect companion for finding the best 
+        accommodations nearby. Whether you're planning a quick getaway or a 
+        long vacation, we've got you covered with a wide range of stays to 
+        suit your needs and budget.
+      </Text>
+
+      <Text style={styles.sectionTitle}>Our Mission</Text>
+      <Text style={styles.description}>
+        Our mission is to make your travel experience smooth and memorable by 
+        helping you discover the best stays with just a few taps.
+      </Text>
+
+      <Text style={styles.sectionTitle}>Key Features</Text>
+      <Text style={styles.features}>
+        • Explore Nearby Stays: Browse through a variety of accommodations near your current location.{"\n"}
+        • Detailed Information: Get all the information you need about the stay, including amenities, photos, reviews, and more.{"\n"}
+        • Easy Booking: Book your stay with a simple and secure process.{"\n"}
+        • Personalized Recommendations: Receive suggestions based on your preferences and previous bookings.
+      </Text>
+
+      <Text style={styles.footer}>© 2024 The Near Stay. All rights reserved.</Text>
+
+      
+       
+    </ScrollView>
+  );
+};
 
 const styles = StyleSheet.create({
-    container: {
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    blobImage: {
-      position: 'absolute',
-      bottom: -100, // Adjust this value to move the image up or down as needed
-      left: '50%',
-      transform: [{ translateX: -100 }], // Adjust the value to center the image (negative half of the image width)
-      width: '100%',
-      height: 200, // Adjust as needed
-      resizeMode: 'contain',
-    },
-    businessWomanImage: {
-      width: 300, // Adjust this value based on your requirements
-      height: 400, // Adjust this value based on your requirements
-      resizeMode: 'contain',
-      marginBottom: 50, // To provide space for the absolute positioned image
-    },
-  });
+  container: {
+    paddingVertical: 30,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    backgroundColor: '#f9f9f9',
+  },
+  logo: {
+    width: 350,
+    height: 200,
+    borderRadius: 10,
+    marginBottom: 20,
+  },
+  appName: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 10,
+  },
+  sectionTitle: {
+    fontSize: 22,
+    fontWeight: '600',
+    marginTop: 20,
+    marginBottom: 10,
+    color: '#5A31F4',
+    textAlign: 'center',
+  },
+  description: {
+    fontSize: 16,
+    textAlign: 'center',
+    color: '#555',
+    lineHeight: 24,
+    paddingHorizontal: 15,
+  },
+  features: {
+    fontSize: 16,
+    color: '#555',
+    lineHeight: 24,
+    paddingHorizontal: 15,
+    textAlign: 'left',
+  },
+  footer: {
+    fontSize: 14,
+    color: '#aaa',
+    marginTop: 30,
+    textAlign: 'center',
+  },
+});
 
-export default About
+export default About;
