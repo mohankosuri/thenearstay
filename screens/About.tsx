@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import Animated from 'react-native-reanimated';
+ 
  
 
 const About = () => {
@@ -37,7 +39,7 @@ const About = () => {
       </Text>
 
       <Text style={styles.footer}>© 2024 The Near Stay. All rights reserved.</Text>
-
+ 
       
        
     </ScrollView>

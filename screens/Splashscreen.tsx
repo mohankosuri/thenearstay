@@ -15,10 +15,10 @@ const Splashscreen = () => {
         duration: 1000 ,
         useNativeDriver: true,
       }),
-      Animated.delay(1000),  
+      Animated.delay(2000),  
       Animated.timing(fadeAnim, {
         toValue: 0, 
-        duration: 1000, 
+        duration: 2000, 
         useNativeDriver: true,
       }),
     ]).start(() => {
@@ -28,11 +28,11 @@ const Splashscreen = () => {
 
   return (
     <View className='flex-1 bg-splash1'>
-      <StatusBar barStyle="light-content" backgroundColor="#6a51ae"></StatusBar>
+      <StatusBar barStyle="light-content" backgroundColor="#12171b"></StatusBar>
       
         <View className='flex justify-center items-center mt-[200px] p-4'>
           <Animated.View style={[{ opacity: fadeAnim }]}>
-             <Image source={require('../assets/near.png')} className='w-[350px] h-[300px]'/>
+             <Image source={require('../assets/thenearstay.jpg')} className='w-[350px] h-[350px]'/>
           </Animated.View>
         </View>
        

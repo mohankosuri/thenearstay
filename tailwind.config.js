@@ -5,7 +5,7 @@ module.exports = {
     extend: {colors: {
         customTeal: '#008080',
         splash:'#feffff',
-        splash1:'#121B1A'
+        splash1:'#12171b'
 
       }},
   },

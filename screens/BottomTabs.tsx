@@ -2,7 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Animated, { useAnimatedStyle, withSpring } from 'react-native-reanimated';
-
+import { StatusBar } from 'react-native';
  
 import Home from './Home';
 import Properties from './Properties';

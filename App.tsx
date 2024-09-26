@@ -13,6 +13,7 @@ import HiddenHomes from './components/HiddenHomes';
 import MortgageRates from './components/MortgageRates';
 import Profile from './screens/Profile';
 import Filter from './components/Filter';
+ 
 
  
 import PropertyDetail1 from './screens/PropertyDetail1';
@@ -47,7 +48,7 @@ import PropertyDetail1 from './screens/PropertyDetail1';
           <stack.Screen name='filter' component={Filter} ></stack.Screen>
           <stack.Screen name='PropertyDetail1' component={PropertyDetail1} options={{headerShown:false}}></stack.Screen>
           
-         
+          
         </stack.Navigator>
       </NavigationContainer>
         
