@@ -1,10 +1,20 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { Button } from 'react-native-paper';
+import { Avatar, Card, IconButton } from 'react-native-paper';
+import { Switch } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
 
 const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+
+  const navigation:any = useNavigation();
+
+  const [isSwitchOn, setIsSwitchOn] = React.useState(false);
+
+  const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
 
   const handleSend = () => {
     // Handle form submission logic here
@@ -42,6 +52,18 @@ const Contact = () => {
       <TouchableOpacity style={styles.button} onPress={handleSend}>
         <Text style={styles.buttonText}>Send</Text>
       </TouchableOpacity>
+      <Button icon="camera" mode="contained" onPress={() => navigation.navigate('Coffeescreen')}>
+    Press me
+  </Button>
+
+  <Card.Title
+    title="Card Title"
+    subtitle="Card Subtitle"
+    left={(props) => <Avatar.Icon {...props} icon="folder" />}
+    right={(props) => <IconButton {...props} icon="dots-vertical" onPress={() => {}} />}
+  />
+
+<Switch value={isSwitchOn} onValueChange={onToggleSwitch} />
     </ScrollView>
   );
 };
