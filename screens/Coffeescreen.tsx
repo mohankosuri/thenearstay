@@ -55,17 +55,19 @@ const styles = StyleSheet.create({
   },
   heading: {
     color: '#fff',
-    fontSize: 38,
-    fontWeight: '900',
+    fontSize: 34,
+    
     textAlign: 'center',
-    marginBottom: 10,
-    fontFamily:'OpenSans-SemiBoldItalic',
+    marginBottom: 20,
+    fontFamily:'Sora-SemiBold'
+    
   },
   subheading: {
     color: '#ccc',
     fontSize: 18,
     textAlign: 'center',
-    marginBottom: 20,
+    marginBottom: 30,
+    fontFamily:'OpenSans_Condensed-Bold'
   },
   button: {
     backgroundColor: '#c67c4e',
